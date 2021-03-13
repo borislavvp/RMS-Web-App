@@ -1,0 +1,75 @@
+@import "../../../variables";
+
+.presentation{
+    height: 100vh;
+    background: url("../../../assets/images/bg2.jpg") no-repeat center bottom;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+
+    .spacer{
+        margin: 0 0 1.5rem 0;
+    }
+    .sub-title{
+        font-size: 1.5rem;
+        letter-spacing: .5rem;
+        line-height: 2rem;
+        margin-bottom: 4rem;
+    }
+
+    .down{
+        width: 3rem;
+        height: 4rem;
+        position: absolute;
+        bottom: 0;
+
+        &::after{
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        img{
+            position: absolute;
+            width: 100%;
+        }
+    }
+}
+
+.menu{
+    height: 70vh;
+    padding: 3rem 20%;
+    background: url("../../../assets/images/menu.jpg") no-repeat center;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+
+    p{
+        max-width: 70rem;
+        font-size: 1.25rem;
+        font-weight: lighter;
+        margin: 7rem 0;
+    }
+}
+
+.specialities{
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+
+    .list{
+        display: flex;
+
+        .item{
+            width: 20%;
+
+            img{
+                width: 100%;
+            }
+        }
+    }
+    
+    .spacer-basic{
+        background-color: $primary-light;
+    }
+}
