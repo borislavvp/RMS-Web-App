@@ -33,7 +33,7 @@ $website-theme: mat-light-theme((
 // that you are using.
 @include angular-material-theme($website-theme);
 
-
+@import "./assets/fonts/fonts.scss";
 
 
 
@@ -44,7 +44,7 @@ $website-theme: mat-light-theme((
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI';
+    font-family: 'Open Sans';
     &:focus{
         outline: none;
     }
@@ -61,23 +61,32 @@ a{
 
 
 // Custom classes
+.container{
+    padding: 5rem 10%;
+}
 .title{
-    font-family: 'papyrus', sans-serif;
-    font-size: 70px;
+    font-family: 'Papyrus';
+    font-size: 4.25rem;
 }
 .btn-primary{
     border: none;
-    background-color: $primary-light;
+    background-color: $primary-dark;
     color: #fff;
     font-size: 1rem;
     padding: 1rem 3rem;
     cursor: pointer;
+    &:hover{
+        background-color: $primary-dark-hover;
+    }
 }
 .btn-light{
     background-color: transparent;
     border: 3px solid #fff;
     font-weight: bold;
     letter-spacing: 0.2rem;
+    &:hover{
+        background-color: transparent;
+    }
 }
 .spacer{
     height: 1rem;
@@ -107,5 +116,21 @@ a{
 ::-webkit-scrollbar-thumb:hover {
     background: $primary-dark;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+@media screen and (max-width: 1279px){
+    .title{
+        font-size: 3rem;
+    }
+}
+@media screen and (max-width: 959px){
+    .title{
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width: 599px){
+    .title{
+        font-size: 2rem;
+    }
+}
