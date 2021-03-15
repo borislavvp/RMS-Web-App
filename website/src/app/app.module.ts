@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 // * Angular Material
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatIconModule } from '@angular/material/icon';
 
 // * Other Modules
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -41,7 +42,8 @@ import { DrinksComponent } from './components/menu/drinks/drinks.component';
     AppRoutingModule,
     NoopAnimationsModule,
     FlexLayoutModule,
-    MatGridListModule
+    MatGridListModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
