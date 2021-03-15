@@ -27,22 +27,46 @@
     <div class="title">Our Specialties</div>
     <div class="spacer-basic"></div>
 
-    <div class="list">
-        <div class="item">
-            <img src="../../../assets/images/m1.png" alt="">
-            <p class="item-title"></p>
-            <p class="item-description"></p>
+    <div class="list" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="3rem" fxLayoutAlign="center center" fxLayoutAlign.lt-lg="space-evenly center">
+        <div class="item" fxLayout="column" fxLayoutAlign="none center">
+            <div class="img-holder">
+                <img src="../../../assets/images/m1.png" alt="">
+            </div>
+            <p class="item-title">Different</p>
+            <p class="item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut facilisis magna. </p>
         </div>
-        <div class="item">
-            <img src="../../../assets/images/m2.png" alt="">
-            <p class="item-title"></p>
-            <p class="item-description"></p>
+        <div class="item" fxLayout="column" fxLayoutAlign="none center">
+            <div class="img-holder">
+                <img src="../../../assets/images/m2.png" alt="">
+            </div>
+            <p class="item-title">Delicious</p>
+            <p class="item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut facilisis magna. </p>
         </div>
-        <div class="item">
-            <img src="../../../assets/images/m3.png" alt="">
-            <p class="item-title"></p>
-            <p class="item-description"></p>
+        <div class="item" fxLayout="column" fxLayoutAlign="none center">
+            <div class="img-holder">
+                <img src="../../../assets/images/m3.png" alt="">
+            </div>
+            <p class="item-title">Delightful</p>
+            <p class="item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut facilisis magna. </p>
         </div>
     </div>
+    <button class="btn-primary">Gallery</button>
 </section>
 
+<!-- Location -->
+<section class="location" fxLayout="row" fxLayoutGap=".25rem" fxLayout.lt-lg="column" fxLayoutGap.lt-lg="0">
+    <div class="images" fxFlex="30" fxLayout="column" fxLayoutGap=".25rem" fxLayout.lt-lg="row">
+        <div class="img-holder" fxFlex="50" fxFlex.lt-md style="background-image: url('../../../assets/images/rest1.jpg');"></div>
+        <div class="img-holder" fxFlex="50" fxHide.lt-md style="background-image: url('../../../assets/images/rest2.jpg');"></div>
+    </div>
+    <div class="info" fxFlex="35" fxLayout="column" fxLayoutAlign="center center">
+        <div class="title">Our Restaurant</div>
+        <div class="spacer-basic"></div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut facilisis magna. Maecenas ipsum justo, fermentum sed eros quis, 
+            luctus pretium nunc. Curabitur ex lectus, porttitor vitae lorem sit amet, gravida lacinia risus. Vestibulum fringilla urna vel eros 
+            malesuada, eget venenatis neque tempor. Aenean diam odio, pharetra ac augue a, pellentesque varius orci. Sed fermentum arcu ut eros 
+            egestas pellentesque. Pellentesque a fringilla tellus.</p>
+        <button class="btn-primary btn-light">About Us</button>
+    </div>
+    <div class="map" fxFlex="35" fxFlex.lt-md="35"></div>
+</section>
