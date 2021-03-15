@@ -92,13 +92,21 @@ a{
     height: 1rem;
 }
 .icon{
-    width: 30px;
+    width: 2rem;
 }
 .spacer-basic{
     margin-top: 1rem;
     width: 8rem;
     height: .4rem;
     background-color: #fff;
+}
+.header-image{
+    height: 40vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 3rem;
+    color: #fff;
 }
 
 
@@ -119,17 +127,20 @@ a{
 
 
 
-@media screen and (max-width: 1279px){
+@media screen and (max-width: 1280px){
     .title{
         font-size: 3rem;
     }
 }
-@media screen and (max-width: 959px){
+@media screen and (max-width: 960px){
     .title{
         font-size: 2rem;
     }
+    .icon{
+        width: 1.6rem;
+    }
 }
-@media screen and (max-width: 599px){
+@media screen and (max-width: 600px){
     .title{
         font-size: 2rem;
     }

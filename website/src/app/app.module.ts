@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 // * Angular Material
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 // * Other Modules
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -16,6 +17,11 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { SaladsComponent } from './components/menu/salads/salads.component';
+import { MenuItemComponent } from './components/menu/menu-item/menu-item.component';
+import { MainsComponent } from './components/menu/mains/mains.component';
+import { DessertsComponent } from './components/menu/desserts/desserts.component';
+import { DrinksComponent } from './components/menu/drinks/drinks.component';
 
 @NgModule({
   declarations: [
@@ -23,13 +29,19 @@ import { MenuComponent } from './components/menu/menu.component';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    MenuComponent
+    MenuComponent,
+    SaladsComponent,
+    MenuItemComponent,
+    MainsComponent,
+    DessertsComponent,
+    DrinksComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

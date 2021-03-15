@@ -1,0 +1,33 @@
+.header-image{
+    background-image: url("../../../assets/images/menu-header.jpg");
+}
+
+
+// Styling for child components
+.menu{
+    .menu-category{
+        padding: 3rem 25%;
+    }
+    .category-img{
+        width: 25vw;
+        height: 25vw;
+        object-fit: cover;
+    }
+    
+    @media screen and (max-width: 1279px){
+        .menu-category{
+            padding: 3rem 15%;
+        }
+    }
+    @media screen and (max-width: 960px){
+        .menu-category{
+            padding: 3rem 5%;
+        }
+    }
+    @media screen and (max-width: 600px){
+        .category-img{
+            width: 50vw !important;
+            height: 50vw !important;
+        }
+    }
+}
