@@ -1,3 +1,5 @@
+@import '/src/variables';
+
 header{
     width: 100%;
     height: 12vh;
@@ -10,11 +12,13 @@ header{
     .logo{
         height: 60%;
         cursor: pointer;
+        z-index: 3;
     }
 
     nav{
         display: flex;
         color: #fff;
+        z-index: 4;
 
         ul{
             display: flex;
@@ -34,13 +38,22 @@ header{
 }
 mat-icon.icon{
     cursor: pointer;
+    z-index: 3;
+}
+.helper{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: $primary-dark;
 }
 
 @media screen and (max-width: 1100px){
     header{
         flex-direction: column;
         height: auto;
-        min-height: 100vh;
         justify-content: center;
 
         .top{

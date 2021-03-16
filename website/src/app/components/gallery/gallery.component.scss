@@ -1,0 +1,22 @@
+.header-image{
+    background-image: url("../../../assets/images/gallery-header.jpg");
+}
+
+section{
+    padding: 2rem 10%;
+    
+    img{
+        width: 100%;
+        object-fit: cover;
+    }
+}
+.btn-primary{
+    max-width: 200px;
+    margin: 5rem 0 3rem 0;
+}
+
+@media screen and (max-width: 1200px){
+    section{
+        padding: 2rem 5%;
+    }
+}
