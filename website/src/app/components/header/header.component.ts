@@ -10,6 +10,7 @@ export class HeaderComponent implements OnInit {
 
   onMobile: boolean = false;
   navOpen: boolean = false;
+  toBeColored: boolean = false;
 
   constructor(private router: Router) { }
 
@@ -19,6 +20,10 @@ export class HeaderComponent implements OnInit {
     this.router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
         this.navOpen = false;
+        if(this.router.url === '/' || this.router.url === '/menu' || this.router.url === "/about" || this.router.url === "/gallery"){
+          this.toBeColored = false;
+        }
+        else this.toBeColored = true;
       }
     });
   }

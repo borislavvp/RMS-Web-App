@@ -1,7 +1,9 @@
 <header 
 (window:resize)="onResize($event)" 
 [ngStyle]="{'background-color': onMobile && navOpen ? 'rgb(0,0,0,.95)' : 'transparent',
-            'position': onMobile && navOpen ? 'fixed' : 'absolute'}">
+            'position': onMobile && navOpen ? 'fixed' : 'absolute',
+            'min-height': onMobile && navOpen ? '100vh' : '12vh'}">
+    <div class="helper" *ngIf="!navOpen && toBeColored"></div>
     <div class="top" fxLayout="row" fxLayoutAlign="space-between center">
         <img routerLink="/" src="../../../assets/images/logo_light.svg" alt="" class="logo">
     
@@ -13,7 +15,7 @@
         <ul>
             <li><a routerLink="/menu">Menu</a></li>
             <li><a routerLink="/about">About</a></li>
-            <li><a routerLink="/contact">Contact</a></li>
+            <li><a routerLink="/gallery">Gallery</a></li>
         </ul>
         <ul fxLayout="row" [fxLayoutGap]="onMobile ? '3rem' : '0rem'">
             <li><a routerLink="/shopping-cart"><img src="../../../assets/images/icons/shopping_bag.png" alt="" class="icon"></a></li>

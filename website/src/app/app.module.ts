@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
 
 // * Other Modules
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -23,6 +24,11 @@ import { MenuItemComponent } from './components/menu/menu-item/menu-item.compone
 import { MainsComponent } from './components/menu/mains/mains.component';
 import { DessertsComponent } from './components/menu/desserts/desserts.component';
 import { DrinksComponent } from './components/menu/drinks/drinks.component';
+import { ItemModalComponent } from './components/menu/item-modal/item-modal.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
+import { AccountComponent } from './components/account/account.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegistrationComponent } from './components/registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +41,12 @@ import { DrinksComponent } from './components/menu/drinks/drinks.component';
     MenuItemComponent,
     MainsComponent,
     DessertsComponent,
-    DrinksComponent
+    DrinksComponent,
+    ItemModalComponent,
+    GalleryComponent,
+    AccountComponent,
+    LoginComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +54,8 @@ import { DrinksComponent } from './components/menu/drinks/drinks.component';
     NoopAnimationsModule,
     FlexLayoutModule,
     MatGridListModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
