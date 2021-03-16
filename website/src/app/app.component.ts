@@ -30,5 +30,11 @@ export class AppComponent {
       ).subscribe((ttl: string) => {
         this.titleService.setTitle(ttl);
       });
+    this.router.events.subscribe((evt) => {
+        if(!(evt instanceof NavigationEnd)) {
+            return;
+        }
+        window.scrollTo(0, 0);
+    });
   }
 }
