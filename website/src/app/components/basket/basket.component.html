@@ -1,16 +1,16 @@
 <section fxLayout="row">
     <div class="basket top-spacing" fxLayout="column" fxLayoutGap="2rem" fxFlex="70">
 
-        <div class="basket-item-list" >
+        <div class="basket-item-list" fxLayout="column" fxLayoutGap="2rem">
             <h2>Shopping Basket</h2>
     
             <div class="basket-item" fxLayout="row" fxLayoutAlign="space-between center">
                 <p>Lorem ipsum dolor</p>
                 <div fxLayout="row" fxLayoutGap="5rem" fxLayoutAlign="none center">
-                    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1rem">
-                        <img src="../../../assets/images/icons/add.png" alt="" class="icon">
+                    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1.5rem">
+                        <img src="../../../assets/images/icons/minus.png" alt="" class="icon">
                         <p>1</p>
-                        <img src="../../../assets/images/icons/add.png" alt="" class="icon">
+                        <img src="../../../assets/images/icons/plus.png" alt="" class="icon">
                     </div>
                     <p>$ 7.50</p>
                     <mat-icon>close</mat-icon>
@@ -28,7 +28,6 @@
 
     </div>
 
-    <div class="right-panel top-spacing" fxFlex="30">
-        <h2>Delivery Details</h2>
-    </div>
+    <app-delivery-details *ngIf="onDelivery" (click)="toggle()" class="right-panel top-spacing" fxFlex="30" fxLayout="column" fxLayoutGap="2rem"></app-delivery-details>
+    <app-payment-details *ngIf="onPayment" (click)="toggle()" class="right-panel top-spacing" fxFlex="30" fxLayout="column" fxLayoutGap="2rem"></app-payment-details>
 </section>

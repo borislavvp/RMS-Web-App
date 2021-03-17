@@ -29,6 +29,9 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { AccountComponent } from './components/account/account.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { BasketComponent } from './components/basket/basket.component';
+import { DeliveryDetailsComponent } from './components/basket/delivery-details/delivery-details.component';
+import { PaymentDetailsComponent } from './components/basket/payment-details/payment-details.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,10 @@ import { RegistrationComponent } from './components/registration/registration.co
     GalleryComponent,
     AccountComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    BasketComponent,
+    DeliveryDetailsComponent,
+    PaymentDetailsComponent
   ],
   imports: [
     BrowserModule,

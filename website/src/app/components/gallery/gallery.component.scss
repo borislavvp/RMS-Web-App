@@ -5,9 +5,21 @@
 section{
     padding: 2rem 10%;
     
-    img{
+    .group{
         width: 100%;
-        object-fit: cover;
+
+        .img{
+            width: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        
+            &::after{
+                content: "";
+                display: block;
+                padding-top: 75%;
+            }
+        }
     }
 }
 .btn-primary{
