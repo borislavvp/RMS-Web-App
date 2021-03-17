@@ -1,0 +1,33 @@
+<section fxLayout="row">
+    <div class="basket top-spacing" fxLayout="column" fxLayoutGap="2rem" fxFlex="70">
+
+        <div class="basket-item-list" fxLayout="column" fxLayoutGap="2rem">
+            <h2>Shopping Basket</h2>
+    
+            <div class="basket-item" fxLayout="row" fxLayoutAlign="space-between center">
+                <p>Lorem ipsum dolor</p>
+                <div fxLayout="row" fxLayoutGap="5rem" fxLayoutAlign="none center">
+                    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1.5rem">
+                        <img src="../../../assets/images/icons/minus.png" alt="" class="icon">
+                        <p>1</p>
+                        <img src="../../../assets/images/icons/plus.png" alt="" class="icon">
+                    </div>
+                    <p>$ 7.50</p>
+                    <mat-icon>close</mat-icon>
+                </div>
+            </div>
+        </div>
+
+        <div class="total" fxLayout="row" fxLayoutAlign="space-between center">
+            <a routerLink="/menu" class="link">Back to menu</a>
+            <div fxLayout="row" fxLayoutGap="3rem">
+                <p>Subtotal:</p>
+                <p>$ 37.50</p>
+            </div>
+        </div>
+
+    </div>
+
+    <app-delivery-details *ngIf="onDelivery" (click)="toggle()" class="right-panel top-spacing" fxFlex="30" fxLayout="column" fxLayoutGap="2rem"></app-delivery-details>
+    <app-payment-details *ngIf="onPayment" (click)="toggle()" class="right-panel top-spacing" fxFlex="30" fxLayout="column" fxLayoutGap="2rem"></app-payment-details>
+</section>
