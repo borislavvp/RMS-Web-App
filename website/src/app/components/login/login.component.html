@@ -1,6 +1,15 @@
 <section class="top-spacing" fxLayout="column" fxLayoutAlign="none center">
-    <h1>Login</h1><br>
-    In Construction...
-    <br><br>
-    <a routerLink="/register" class="link">Register</a>
+    <h2>Login</h2>
+    <form fxLayout="column" fxLayoutGap="1rem">
+        <div fxLayout="column">
+            <label for="">Email:</label>
+            <input type="text">
+        </div>
+        <div fxLayout="column">
+            <label for="">Password:</label>
+            <input type="password">
+        </div>
+        <a routerLink="/register" class="link" fxLayoutAlign="center">Not a user yet? Register Now.</a>
+        <button class="btn-primary">Login</button>
+    </form>
 </section>

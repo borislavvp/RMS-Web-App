@@ -1,6 +1,27 @@
 <section class="top-spacing" fxLayout="column" fxLayoutAlign="none center">
-    <h1>Registration</h1><br>
-    In Construction...
-    <br><br>
-    <a routerLink="/login" class="link">Login</a>
+    <h2>Registration</h2>
+    <form fxLayout="column" fxLayoutGap="1rem">
+        <div fxLayout="column">
+            <label for="">First Name:</label>
+            <input type="text">
+        </div>
+        <div fxLayout="column">
+            <label for="">Last Name:</label>
+            <input type="text">
+        </div>
+        <div fxLayout="column">
+            <label for="">Email:</label>
+            <input type="email">
+        </div>
+        <div fxLayout="column">
+            <label for="">Password:</label>
+            <input type="password">
+        </div>
+        <div fxLayout="column">
+            <label for="">Confirm Password:</label>
+            <input type="password">
+        </div>
+        <a routerLink="/login" class="link" fxLayoutAlign="center">Have an account? Login Here.</a>
+        <button class="btn-primary">Register</button>
+    </form>
 </section>

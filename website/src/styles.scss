@@ -54,10 +54,29 @@ body{
     height: 100vh;
     overflow-x: hidden;
 }
+h2{
+    font-weight: 400;
+}
 a{
     text-decoration: none;
     color: $primary-dark;
 }
+input,textarea{
+    width: 100%;
+    padding: .5rem .7rem;
+    font-size: 1.2rem;
+    border-radius: .5rem;
+    border: 1px solid rgb(202, 202, 202);
+    resize: none;
+}
+form{
+    width: 90%;
+    max-width: 30rem;
+    label{
+        font-weight: 300;
+    }
+}
+
 
 // Material
 mat-icon.icon{
