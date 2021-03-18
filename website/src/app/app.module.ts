@@ -32,6 +32,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { BasketComponent } from './components/basket/basket.component';
 import { DeliveryDetailsComponent } from './components/basket/delivery-details/delivery-details.component';
 import { PaymentDetailsComponent } from './components/basket/payment-details/payment-details.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { PaymentDetailsComponent } from './components/basket/payment-details/pay
     RegistrationComponent,
     BasketComponent,
     DeliveryDetailsComponent,
-    PaymentDetailsComponent
+    PaymentDetailsComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

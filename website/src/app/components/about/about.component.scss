@@ -1,0 +1,24 @@
+.header-image{
+    background-image: url("../../../assets/images/about-header.jpg");
+}
+
+section{
+    padding: 5rem 10%;
+    font-weight: 300;
+    .item{
+        width: 20%;
+
+        img{
+            max-width: 3rem;
+        }
+
+    }
+    .img{
+        width: 100%;
+        &::after{
+            content: "";
+            display: block;
+            padding-top: 55%;
+        }
+    }
+}
