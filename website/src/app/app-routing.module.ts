@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AboutComponent } from './components/about/about.component';
 import { AccountComponent } from './components/account/account.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { HomeComponent } from './components/home/home.component';
@@ -10,6 +11,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full', data: {title: 'ChorbaDeck | Welcome'} },
   { path: 'menu', component: MenuComponent, data: {title: 'Menu'} },
+  { path: 'about', component: AboutComponent, data: {title: 'About'} },
   { path: 'gallery', component: GalleryComponent, data: {title: 'Gallery'} },
   { path: 'account', component: AccountComponent, data: {title: 'Tracking'} },
   { path: 'login', component: LoginComponent, data: {title: 'Login'} },
