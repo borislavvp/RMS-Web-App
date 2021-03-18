@@ -5,13 +5,13 @@
 section{
     padding: 5rem 10%;
     font-weight: 300;
+    text-align: justify;
     .item{
         width: 20%;
-
+        text-align: center;
         img{
             max-width: 3rem;
         }
-
     }
     .img{
         width: 100%;
@@ -20,5 +20,16 @@ section{
             display: block;
             padding-top: 55%;
         }
+    }
+}
+
+@media screen and (max-width: 840px){
+    .item{
+        width: 30% !important;
+    }
+}
+@media screen and (max-width: 600px){
+    .item{
+        width: 90% !important;
     }
 }
