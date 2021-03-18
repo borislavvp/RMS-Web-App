@@ -2,7 +2,7 @@
 (window:resize)="onResize($event)" 
 [ngStyle]="{'background-color': onMobile && navOpen ? 'rgb(0,0,0,.95)' : 'transparent',
             'position': onMobile && navOpen ? 'fixed' : 'absolute',
-            'min-height': onMobile && navOpen ? '100vh' : '12vh'}">
+            'height': onMobile && navOpen ? '100vh' : 'auto'}">
     <div class="helper" *ngIf="!navOpen && toBeColored"></div>
     <div class="top" fxLayout="row" fxLayoutAlign="space-between center">
         <img routerLink="/" src="../../../assets/images/logo_light.svg" alt="" class="logo">
