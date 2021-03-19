@@ -1,6 +1,36 @@
 <section class="top-spacing" fxLayout="column" fxLayoutAlign="none center">
-    <h1>Trancking Info</h1><br>
-    In Construction...
+    <h2>Trancking Info</h2><br>
+    Under Construction...
     <br><br>
     <a routerLink="/login" class="link">Login</a>
+    <br><br><br><br><br><br>
+
+    <div class="progress">
+        <mat-progress-bar></mat-progress-bar>
+
+        <div class="states" fxLayout="row" fxLayoutAlign="space-between none">
+            <div class="state past-state"></div>
+            <div class="state past-state"></div>
+            <div class="state current-state"></div>
+            <div class="state future-state"></div>
+            <div class="state future-state"></div>
+        </div>
+
+        <div class="states-icons" fxLayout="row" fxLayoutAlign="space-between center">
+            <div class="icon" style="background-image: url(../../../assets/images/icons/tracking/accepted_past.png);"></div>
+            <div class="icon" style="background-image: url(../../../assets/images/icons/tracking/cooking_past.png);"></div>
+            <div class="icon" style="background-image: url(../../../assets/images/icons/tracking/packaging_current.png);"></div>
+            <div class="icon" style="background-image: url(../../../assets/images/icons/tracking/delivering_future.png);"></div>
+            <div class="icon" style="background-image: url(../../../assets/images/icons/tracking/delivered_future.png);"></div>
+        </div>
+
+        <div class="states-names" fxLayout="row" fxLayoutAlign="space-between center">
+            <p class="past-state">Accepted</p>
+            <p class="past-state">Cooking</p>
+            <p class="current-state">Packaging</p>
+            <p class="future-state">Delivering</p>
+            <p class="future-state">Delivered</p>
+        </div>
+    </div>
+
 </section>

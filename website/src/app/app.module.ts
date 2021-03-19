@@ -9,6 +9,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 // * Other Modules
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -63,7 +64,8 @@ import { AboutComponent } from './components/about/about.component';
     FlexLayoutModule,
     MatGridListModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
