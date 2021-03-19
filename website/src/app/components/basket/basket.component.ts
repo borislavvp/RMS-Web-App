@@ -11,6 +11,7 @@ export class BasketComponent implements OnInit {
   onDelivery: boolean = true;
   onPayment: boolean = false;
   onDesktop: boolean = true;
+  toShow = false;
 
   constructor() { }
 
