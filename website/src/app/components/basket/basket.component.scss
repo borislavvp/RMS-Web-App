@@ -1,5 +1,6 @@
 section{
     height: 95vh;
+    position: relative;
     
     .basket{
         height: 100%;
@@ -16,6 +17,13 @@ section{
                     border-radius: 50%;
                 }
             }
+        }
+
+        .btn-primary{
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            height: 100px;
         }
     }
     .right-panel{

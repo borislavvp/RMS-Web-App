@@ -10,10 +10,16 @@ export class BasketComponent implements OnInit {
 
   onDelivery: boolean = true;
   onPayment: boolean = false;
-  
+  onDesktop: boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.onDesktop = window.innerWidth >= 1100;
+  }
+
+  onResize(event){
+    this.onDesktop = event.target.innerWidth >= 1100;
   }
 
   toggle(){
