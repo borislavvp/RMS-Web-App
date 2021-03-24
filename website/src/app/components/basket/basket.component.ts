@@ -28,4 +28,8 @@ export class BasketComponent implements OnInit {
     this.onPayment = !this.onPayment;
   }
 
+  show(){
+    this.toShow = !this.toShow;
+  }
+
 }

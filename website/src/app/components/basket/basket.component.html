@@ -7,13 +7,25 @@
             <!-- To be exported in a separate component -->
             <div class="basket-item" fxLayout="row" fxLayoutAlign="space-between center">
                 <p>Lorem ipsum dolor</p>
-                <div fxLayout="row" fxLayoutGap="5rem" fxLayoutGap.lt-sm="2rem" fxLayoutAlign="none center">
+                <div fxLayout="row" fxLayoutGap="5rem" fxLayoutGap.lt-sm="1.5rem" fxLayoutAlign="none center">
                     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1.5rem" fxLayoutGap.lt-sm=".8rem">
                         <img src="../../../assets/images/icons/minus.png" alt="" class="icon">
                         <p>1</p>
                         <img src="../../../assets/images/icons/plus.png" alt="" class="icon">
                     </div>
-                    <p>$ 7.50</p>
+                    <p>$7.50</p>
+                    <mat-icon>close</mat-icon>
+                </div>
+            </div>
+            <div class="basket-item" fxLayout="row" fxLayoutAlign="space-between center">
+                <p>Lorem ipsum dolor</p>
+                <div fxLayout="row" fxLayoutGap="5rem" fxLayoutGap.lt-sm="1.5rem" fxLayoutAlign="none center">
+                    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1.5rem" fxLayoutGap.lt-sm=".8rem">
+                        <img src="../../../assets/images/icons/minus.png" alt="" class="icon">
+                        <p>1</p>
+                        <img src="../../../assets/images/icons/plus.png" alt="" class="icon">
+                    </div>
+                    <p>$7.50</p>
                     <mat-icon>close</mat-icon>
                 </div>
             </div>
@@ -27,10 +39,10 @@
             </div>
         </div>
 
-        <button class="btn-primary" *ngIf="!onDesktop" (click)="toShow = !toShow">Order</button>
+        <button class="btn-primary" *ngIf="!onDesktop && !toShow" (click)="show()">Order</button>
     </div>
     
-    <app-delivery-details *ngIf="onDesktop || (toShow && onDelivery)" (click)="toggle()" class="right-panel top-spacing" [fxFlex]="onDesktop ? 30 : 100" fxLayout="column" fxLayoutGap="2rem"></app-delivery-details>
-    <app-payment-details *ngIf="onDesktop || (toShow && onPayment)" (click)="toggle()" class="right-panel top-spacing" [fxFlex]="onDesktop ? 30 : 100" fxLayout="column" fxLayoutGap="2rem"></app-payment-details>
+    <app-delivery-details *ngIf="(onDesktop && onDelivery) || (!onDesktop && toShow && onDelivery)" (click)="toggle()" class="right-panel top-spacing" [fxFlex]="onDesktop ? 30 : 100" fxLayout="column" fxLayoutGap="2rem"></app-delivery-details>
+    <app-payment-details *ngIf="(onDesktop && onPayment) || (!onDesktop && toShow && onPayment)" (click)="toggle()" class="right-panel top-spacing" [fxFlex]="onDesktop ? 30 : 100" fxLayout="column" fxLayoutGap="2rem"></app-payment-details>
 
 </section>
