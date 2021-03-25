@@ -18,5 +18,6 @@
             <input type="text" id="address-input">
         </div>
     </form>
-    <button class="btn-primary">Checkout</button>
+    <a class="link back" *ngIf="onMobile" (click)="goBack()">Back to cart</a>
+    <button class="btn-primary" (click)="changePanel()">Checkout</button>
 </div>

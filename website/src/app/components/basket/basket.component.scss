@@ -28,10 +28,12 @@ section{
         }
     }
     .right-panel{
-        padding: calc(12vh + 5rem) 5% 2rem 5%;
+        padding: calc(12vh + 5rem) 5% 10rem 5%;
+        height: auto;
         background-color: #373737;
         color: #fff;
         position: relative;
+        overflow-y: auto;
 
         input{
             background-color: transparent;
@@ -51,10 +53,14 @@ section{
         // Children components
         .form-wrapper{
             width: 100%;
-            overflow-y: auto;
 
             h2{
                 margin-bottom: 2rem;
+            }
+            .back{
+                position: absolute;
+                bottom: 7rem;
+                left: 2rem;
             }
         }
     }
@@ -68,7 +74,7 @@ section{
         padding: calc(12vh + 5rem) 5% 2rem 5% !important;
     }
     .right-panel{
-        padding: calc(12vh + 5rem) 2% 2rem 2% !important;
+        padding: calc(12vh + 5rem) 2% 10rem 2% !important;
     }
 }
 @media screen and (max-width: 1100px){
@@ -82,7 +88,7 @@ section{
     .right-panel{
         position: absolute !important;
         width: 100%;
-        height: 100%;
+        min-height: 100% !important;
         background-color: #fff !important;
 
         .form-wrapper{

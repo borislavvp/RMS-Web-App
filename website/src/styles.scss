@@ -153,6 +153,14 @@ mat-icon.icon{
     padding-top: calc(12vh + 5rem);
     min-height: 40vh;
 }
+.link{
+    color: $primary-dark;
+    cursor: pointer;
+
+    &:hover{
+        color: $primary-dark-hover;
+    }
+}
 
 
 

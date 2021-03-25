@@ -42,7 +42,15 @@
         <button class="btn-primary" *ngIf="!onDesktop && !toShow" (click)="show()">Order</button>
     </div>
     
-    <app-delivery-details *ngIf="(onDesktop && onDelivery) || (!onDesktop && toShow && onDelivery)" (click)="toggle()" class="right-panel top-spacing" [fxFlex]="onDesktop ? 30 : 100" fxLayout="column" fxLayoutGap="2rem"></app-delivery-details>
-    <app-payment-details *ngIf="(onDesktop && onPayment) || (!onDesktop && toShow && onPayment)" (click)="toggle()" class="right-panel top-spacing" [fxFlex]="onDesktop ? 30 : 100" fxLayout="column" fxLayoutGap="2rem"></app-payment-details>
+    <app-delivery-details class="right-panel top-spacing" [fxFlex]="onDesktop ? 30 : 100" fxLayout="column" fxLayoutGap="2rem"
+        *ngIf="(onDesktop && onDelivery) || (!onDesktop && toShow && onDelivery)" 
+        (onPaymentPanel)="changeToPayment()" (onBack)="onBack()" 
+        [onMobile]="!onDesktop">
+    </app-delivery-details>
+
+    <app-payment-details class="right-panel top-spacing" [fxFlex]="onDesktop ? 30 : 100" fxLayout="column" fxLayoutGap="2rem"
+        *ngIf="(onDesktop && onPayment) || (!onDesktop && toShow && onPayment)" 
+        [onMobile]="!onDesktop" (onBack)="onBack()">
+    </app-payment-details>
 
 </section>

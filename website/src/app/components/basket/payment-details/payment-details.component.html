@@ -20,5 +20,6 @@
             </div>
         </div>
     </form>
-    <button class="btn-primary">Pay</button>
+    <a class="link back" *ngIf="onMobile" (click)="goBack()">Back to cart</a>
+    <button class="btn-primary" routerLink="/account">Pay</button>
 </div>
