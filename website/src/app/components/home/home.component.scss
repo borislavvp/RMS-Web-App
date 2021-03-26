@@ -145,7 +145,7 @@
     .presentation{
         padding: 0 2rem;
         .spacer{
-            max-width: 80%;
+            max-width: 50%;
         }
         .sub-title{
             font-size: 1rem;
@@ -162,6 +162,9 @@
     .specialities{
         .item{
             width: 60% !important;
+            .item-title{
+                font-size: 1.5rem !important;
+            }
         }
     }
     .location{
@@ -170,13 +173,27 @@
         }
     }
 }
-@media screen and (max-width: 599px){
+@media screen and (max-width: 600px){
+    .spacer{
+        max-width: 80% !important;
+    }
     .sub-title{
-        letter-spacing: normal;
-        line-height: normal;
+        letter-spacing: .3rem !important;
+        line-height: 1.5rem !important;
     }
     .down{
-        width: 2rem;
-        height: 3rem;
+        width: 2rem !important;
+        height: 3rem !important;
+    }
+    .specialities{
+        .item{
+            width: 80% !important;
+            .img-holder{
+                width: 70% !important;
+            }
+            .item-title{
+                font-size: 1.5rem !important;
+            }
+        }
     }
 }
