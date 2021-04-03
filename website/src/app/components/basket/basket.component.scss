@@ -1,10 +1,9 @@
 section{
-    height: 95vh;
-    position: relative;
     
     .basket{
         height: 100%;
         padding: calc(12vh + 5rem) 10% 2rem 10%;
+        position: relative;
 
         .basket-item-list{
             height: 100%;
@@ -20,17 +19,21 @@ section{
         }
 
         .btn-primary{
+            position: absolute;
             width: 100%;
+            padding: 2rem 0;
             bottom: 0;
             left: 0;
-            height: 100px;
+            z-index: 3;
         }
     }
     .right-panel{
-        padding: calc(12vh + 5rem) 5% 2rem 5%;
+        padding: calc(12vh + 5rem) 5% 10rem 5%;
+        height: auto;
         background-color: #373737;
         color: #fff;
         position: relative;
+        overflow-y: auto;
 
         input{
             background-color: transparent;
@@ -46,8 +49,70 @@ section{
             width: 100%;
             padding: 2rem 0;
         }
+
+        // Children components
+        .form-wrapper{
+            width: 100%;
+
+            h2{
+                margin-bottom: 2rem;
+            }
+            .back{
+                position: absolute;
+                bottom: 7rem;
+                left: 2rem;
+            }
+        }
     }
 }
 .icon, mat-icon{
     cursor: pointer;
+}
+
+@media screen and (max-width: 1366px){
+    .basket{
+        padding: calc(12vh + 5rem) 5% 2rem 5% !important;
+    }
+    .right-panel{
+        padding: calc(12vh + 5rem) 2% 10rem 2% !important;
+    }
+}
+@media screen and (max-width: 1100px){
+    .basket{
+        padding: 8rem 10% 2rem 10% !important;
+
+        .total{
+            padding-bottom: 4rem;
+        }
+    }
+    .right-panel{
+        position: absolute !important;
+        width: 100%;
+        min-height: 100% !important;
+        background-color: #fff !important;
+
+        .form-wrapper{
+            color: #000 !important;
+            input{
+                border-bottom: 1px solid #000;
+            }
+        }
+    }
+}
+@media screen and (max-width: 800px){
+    .basket{
+        padding: 8rem 5% 2rem 5% !important;
+    }
+}
+
+@media screen and (max-height: 500px){
+    .basket{
+        padding: 7rem 5% 0rem 5% !important;
+    }
+    .total{
+        padding-bottom: 3rem !important;
+    }
+    .btn-primary{
+        padding: 1rem 0 !important;
+    }
 }

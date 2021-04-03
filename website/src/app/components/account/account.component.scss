@@ -1,117 +1,146 @@
-::ng-deep .mat-progress-bar-fill::after {
-    // background-color: rgba(0,255,76,1);
-    background-color: transparent;
-}
+@import '/src/variables';
 
-::ng-deep .mat-progress-bar-buffer {
-    // background: #c6cdd3;
-    background: linear-gradient(90deg, rgba(63,63,63,1) 0%, rgba(63,63,63,1) 25%, rgba(163,58,39,1) 50%, rgba(190,190,190,1) 75%, rgba(190,190,190,1) 100%);
-    background: linear-gradient(90deg, rgba(63,63,63,1) 0%, rgba(63,63,63,1) 25%, rgba(63,63,63,1) 35%, rgba(163,58,39,1) 50%, rgba(190,190,190,1) 65%, rgba(190,190,190,1) 75%, rgba(190,190,190,1) 100%);
-}
+.tracker{
+    width: 100%;
+    min-height: 50vh;
+    padding: 2rem 10%;
 
-::ng-deep .mat-progress-bar {
-    width: 100% !important;
-    height: 1rem !important; 
-    border-radius: .5rem !important;
-}
-
-.progress{
-    width: 50%;
-    height: auto;
-    position: relative;
-    margin-top: 10rem;
-    
-    .states{
-        position: absolute;
+    .progress-bar{
         width: 100%;
-        top: -.5rem;
+        height: 1rem;
+        position: relative;
+        background: linear-gradient(90deg, rgba(63,63,63,1) 0%, rgba(63,63,63,1) 25%, rgba(63,63,63,1) 35%, rgba(163,58,39,1) 50%, rgba(190,190,190,1) 65%, rgba(190,190,190,1) 75%, rgba(190,190,190,1) 100%);
+        
+        .progress-bar-states{
+            height: 50%;
+            width: calc(100% + 2rem);
+            position: absolute;
+            top: -.5rem;
+            left: -1rem;
 
-        .state{
-            width: 2rem;
-            height: 2rem;
-            border-radius: 50%;
-            position: relative;
-
-            &::after{
-                content: "";
-                width: 50%;
-                height: 50%;
-                position: absolute;
-                top: 25%;
-                left: 25%;
+            .state{
+                width: 2rem;
+                height: 2rem;
                 border-radius: 50%;
-                display: inline-block;
+                position: relative;
+                &:after{
+                    content: "";
+                    width: 50%;
+                    height: 50%;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 25%;
+                    left: 25%;
+                }
+            }
+            .previous-state{
+                background-color: $tracking-previous;
+                &::after{
+                    background: url("../../../assets/images/icons/checkmark.png") no-repeat center;
+                    background-size: cover;
+                }
+            }
+            .current-state{
+                background-color: $tracking-current;
+                &::after{
+                    background: url("../../../assets/images/icons/refresh.png") no-repeat center;
+                    background-size: cover;
+                }
+            }
+            .next-state{
+                background-color: $tracking-next;
+                &::after{
+                    background-color: #ddd;
+                }
+            }
+        }
+
+        .progress-bar-icons{
+            width: calc(100% + 5rem);
+            position: absolute;
+            top: -7rem;
+            left: -2.5rem;
+
+            .icon{
+                width: 5rem;
+                height: 5rem;
+                background-position: center;
+                background-repeat: no-repeat;
                 background-size: cover;
             }
         }
-    }
-    .states-icons{
-        width: calc(100% + 5rem);
-        height: 10rem;
-        position: absolute;
-        top: calc(-150% - 10rem);
-        left: calc(0px - 2.5rem);
 
-        .icon{
-            width: 7rem;
-            height: 7rem;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+        .progress-bar-state-names{
+            width: calc(100% + 8rem);
+            position: absolute;
+            bottom: -5rem;
+            left: -4rem;
+
+            p{
+                width: 8rem;
+                text-align: center;
+                font-size: 1.5rem;
+            }
+            .previous-state{
+                color: $tracking-previous;
+            }
+            .current-state{
+                color: $tracking-current;
+            }
+            .next-state{
+                color: $tracking-next;
+            }
         }
     }
-    .states-names{
-        width: calc(100% + 5rem);
-        height: 4rem;
-        position: absolute;
-        bottom: calc(-150% - 5rem);
-        left: calc(0px - 2.5rem);
-        font-size: 1.2rem;
-        font-weight: 600;
-    }
 }
 
-div.past-state{
-    background-color: rgb(65,65,65);
-    &::after{
-        background: url("../../../assets/images/icons/checkmark.png") no-repeat center;
-    }
-}
-div.current-state{
-    background-color: #a33a27;
-    &::after{
-        background: url("../../../assets/images/icons/refresh.png") no-repeat center;
-    }
-}
-div.future-state{
-    background-color: #BEBEBE;
-    &::after{
-        background-color: #fff;
-    }
-}
+@media screen and (max-width: 850px){
+    .progress-bar{
+        .progress-bar-icons{
+            width: calc(100% + 3rem) !important;
+            top: -5rem !important;
+            left: -1.5rem !important;
 
-p.past-state{
-    color: rgb(65,65,65);
-}
-p.current-state{
-    color: #a33a27;
-}
-p.future-state{
-    color: #BEBEBE;
-}
-
-@media screen and (max-width: 1350px){
-    .progress{
-        width: 90%;
+            .icon{
+                width: 3rem !important;
+                height: 3rem !important;
+            }
+        }
+        .progress-bar-state-names{
+            width: calc(100% + 6rem) !important;
+            left: -3rem !important;
+            bottom: -4rem !important;
+            
+            p{
+                width: 6rem !important;
+                font-size: 1rem !important;
+            }
+        }
     }
 }
-@media screen and (max-width: 760px){
-    .states-icons{
-        height: 14rem !important;
+@media screen and (max-width: 500px){
+    .tracker{
+        min-height: 100vh;
+    }
+    .progress-bar{
+        transform: rotate(90deg) scaleY(-1);
+        width: 80vh !important;
 
-        .icon{
-            width: 2rem !important;
-            height: 2rem !important;
+        .progress-bar-states{
+            .state{
+                transform: rotate(-90deg) scaleX(-1);
+            }
+        }
+        .progress-bar-icons{
+            .icon{
+                transform: rotate(-90deg) scaleX(-1);
+            }
+        }
+        .progress-bar-state-names{
+            bottom: -5rem !important;
+            p{
+                transform: rotate(-90deg) scaleX(-1);
+            }
         }
     }
 }

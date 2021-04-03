@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountComponent implements OnInit {
 
+  status = 1;
+
   constructor() { }
 
   ngOnInit(): void {

@@ -153,6 +153,14 @@ mat-icon.icon{
     padding-top: calc(12vh + 5rem);
     min-height: 40vh;
 }
+.link{
+    color: $primary-dark;
+    cursor: pointer;
+
+    &:hover{
+        color: $primary-dark-hover;
+    }
+}
 
 
 
@@ -196,5 +204,10 @@ mat-icon.icon{
 @media screen and (max-width: 600px){
     .title{
         font-size: 2rem;
+    }
+    .btn-light{
+        padding: .7rem 2rem;
+        letter-spacing: .1rem;
+        font-size: .8rem;
     }
 }

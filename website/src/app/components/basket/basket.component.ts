@@ -11,6 +11,7 @@ export class BasketComponent implements OnInit {
   onDelivery: boolean = true;
   onPayment: boolean = false;
   onDesktop: boolean = true;
+  toShow = false;
 
   constructor() { }
 
@@ -22,9 +23,19 @@ export class BasketComponent implements OnInit {
     this.onDesktop = event.target.innerWidth >= 1100;
   }
 
-  toggle(){
-    this.onDelivery = !this.onDelivery;
-    this.onPayment = !this.onPayment;
+  show(){
+    this.toShow = !this.toShow;
+  }
+
+  changeToPayment() {
+    this.onDelivery = false;
+    this.onPayment = true;
+  }
+
+  onBack(){
+    this.onDelivery = true;
+    this.onPayment = false;
+    this.toShow = false;
   }
 
 }
