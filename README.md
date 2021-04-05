@@ -1,6 +1,6 @@
 # ProEP team BALKAN
 
-# "Chorba Deck" Restaurant Order Management System
+# The customer website of Chorba Restaurant from where people can browse menu and place orders.
 
-Files shared at:
-https://drive.google.com/drive/u/1/folders/1yVzW5Owb08zECva5HKT4sn26PLqFrN51
+Website can be found hosted at:
+http://i401075.hera.fhict.nl/
