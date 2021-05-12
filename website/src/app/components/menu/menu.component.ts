@@ -14,15 +14,7 @@ export class MenuComponent implements OnInit {
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.dialog.open(ItemModalComponent, { 
-      panelClass: 'custom-dialog',
-      data: {
-        name: 'Lorem item',
-        description: "destcription lorem ipsum",
-        ingredients: "list with ingredients"  
-      },
-      backdropClass: 'backdropBackground'
-    });
+    this.openDialog();
   }
 
   openDialog(){
