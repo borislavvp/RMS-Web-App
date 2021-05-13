@@ -7,6 +7,7 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginRedirectComponent } from './components/login/login-redirect/login-redirect.component';
 import { LoginComponent } from './components/login/login.component';
+import { LogoutRedirectComponent } from './components/login/logout-redirect/logout-redirect.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { 
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'account', component: AccountComponent, data: {title: 'Tracking'}, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent, data: {title: 'Login'} },
   { path: 'signin-oidc', component: LoginRedirectComponent },
+  { path: 'signout-callback-oidc', component: LogoutRedirectComponent },
   { path: 'register', component: RegistrationComponent, data: {title: 'Register'} },
   { path: 'basket', component: BasketComponent, data: {title: 'Shopping Basket'} },
   { path: '**', redirectTo: '', pathMatch: 'full' }

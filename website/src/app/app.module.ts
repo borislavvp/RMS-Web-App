@@ -11,6 +11,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatMenuModule } from '@angular/material/menu';
 
 // * Other Modules
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -36,6 +37,7 @@ import { DeliveryDetailsComponent } from './components/basket/delivery-details/d
 import { PaymentDetailsComponent } from './components/basket/payment-details/payment-details.component';
 import { AboutComponent } from './components/about/about.component';
 import { LoginRedirectComponent } from './components/login/login-redirect/login-redirect.component';
+import { LogoutRedirectComponent } from './components/login/logout-redirect/logout-redirect.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,8 @@ import { LoginRedirectComponent } from './components/login/login-redirect/login-
     DeliveryDetailsComponent,
     PaymentDetailsComponent,
     AboutComponent,
-    LoginRedirectComponent
+    LoginRedirectComponent,
+    LogoutRedirectComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +73,8 @@ import { LoginRedirectComponent } from './components/login/login-redirect/login-
     MatDialogModule,
     MatProgressBarModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

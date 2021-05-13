@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -11,8 +12,9 @@ export class HeaderComponent implements OnInit {
   onMobile: boolean = false;
   navOpen: boolean = false;
   toBeColored: boolean = false;
+  inAccount: boolean = false;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.onMobile = window.innerWidth <= 1100;
@@ -26,6 +28,13 @@ export class HeaderComponent implements OnInit {
         else this.toBeColored = true;
       }
     });
+
+    this.router.events.subscribe(event => {
+      if(event instanceof NavigationEnd){
+        if(event.url.match("/account")) this.inAccount = true;
+        else this.inAccount = false;
+      }
+    });
   }
 
   onResize(event){
@@ -34,6 +43,11 @@ export class HeaderComponent implements OnInit {
 
   toggleNav(){
     this.navOpen = !this.navOpen;
+  }
+
+  logout(){
+    this.authService.Logout()
+      .catch(() => console.log("Something went wrong!"));
   }
 
 }
