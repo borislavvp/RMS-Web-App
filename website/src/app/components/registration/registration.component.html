@@ -1,25 +1,25 @@
 <section class="top-spacing" fxLayout="column" fxLayoutAlign="none center">
     <h2>Registration</h2>
-    <form fxLayout="column" fxLayoutGap="1rem">
+    <form [formGroup]="registrationForm" (ngSubmit)="register()" fxLayout="column" fxLayoutGap="1rem">
         <div fxLayout="column">
-            <label for="">First Name:</label>
-            <input type="text">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" formControlName="firstName">
         </div>
         <div fxLayout="column">
-            <label for="">Last Name:</label>
-            <input type="text">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" formControlName="lastName">
         </div>
         <div fxLayout="column">
-            <label for="">Email:</label>
-            <input type="email">
+            <label for="email">Email:</label>
+            <input type="email" id="email" formControlName="email">
         </div>
         <div fxLayout="column">
-            <label for="">Password:</label>
-            <input type="password">
+            <label for="password">Password:</label>
+            <input type="password" id="password" formControlName="password">
         </div>
         <div fxLayout="column">
-            <label for="">Confirm Password:</label>
-            <input type="password">
+            <label for="confirm">Confirm Password:</label>
+            <input type="password" id="confirm" formControlName="confirm">
         </div>
         <a routerLink="/login" class="link" fxLayoutAlign="center">Have an account? Login Here.</a>
         <button class="btn-primary">Register</button>

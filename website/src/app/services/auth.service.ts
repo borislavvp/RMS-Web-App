@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { UserManager } from 'oidc-client';
 import { environment } from 'src/environments/environment';
+import { RegisterDTO } from '../models/registerDTO.model';
 
 @Injectable({
   providedIn: 'root'
@@ -21,11 +22,10 @@ export class AuthService {
   constructor(private httpClient: HttpClient, private router: Router) { 
     this._userManager = new UserManager({
       authority: environment.IDENTITY_AUTHORITY,
-      client_id: "WEBSITE_APP_ID",
+      client_id: "WEBSITE_ID",
       redirect_uri:  window.location.protocol + "//" + window.location.host + "/signin-oidc",
       response_type: "code",
       scope: "openid profile",
-      // TODO: Add in routes
       post_logout_redirect_uri: window.location.protocol + "//" + window.location.host + "/signout-callback-oidc",
       automaticSilentRenew: true,
       silent_redirect_uri: window.location.protocol + "//" + window.location.host + "/assets/silent-callback.html"
@@ -94,6 +94,23 @@ export class AuthService {
         .then(() => resolve())
         .catch(() => reject());
     })
+  }
+
+  Register(registerDTO: RegisterDTO): Promise<void> {
+    this.fetching = true;
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        this.httpClient.post<void>(`${this._userManager.settings.authority}/api/register`, registerDTO, this.httpOptions)
+        .toPromise()
+        .then(() => this._userManager.signinRedirect()
+            .then(() => resolve())
+            .catch(() => reject())
+            .finally(() => this.fetching = false)
+        )
+        .catch(() => reject())
+        .finally(() => this.fetching = false)
+      }, 500);
+    }) 
   }
   
 }
