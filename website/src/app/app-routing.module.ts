@@ -13,6 +13,9 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { 
   AuthGuardService as AuthGuard 
 } from './services/auth.guard';
+import { 
+  LoggedGuardService as LoggedGuard 
+} from './services/logged.guard';
 
 
 const routes: Routes = [
@@ -24,7 +27,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent, data: {title: 'Login'} },
   { path: 'signin-oidc', component: LoginRedirectComponent },
   { path: 'signout-callback-oidc', component: LogoutRedirectComponent },
-  { path: 'register', component: RegistrationComponent, data: {title: 'Register'} },
+  { path: 'register', component: RegistrationComponent, data: {title: 'Register'}, canActivate: [LoggedGuard] },
   { path: 'basket', component: BasketComponent, data: {title: 'Shopping Basket'} },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
