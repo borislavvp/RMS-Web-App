@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
-import { UserManager } from 'oidc-client';
+import { User, UserManager } from 'oidc-client';
 import { environment } from 'src/environments/environment';
 import { RegisterDTO } from '../models/registerDTO.model';
 
@@ -46,6 +46,17 @@ export class AuthService {
           this.authChanged.next(false);
         })
      })
+  }
+
+  get User() {
+    return new Promise<User>((resolve, reject) => {
+      this._userManager.getUser()
+        .then(user => {
+          resolve(user);
+        }).catch(() => {
+            reject();
+        })
+    });
   }
 
   SignIn(email: string, password: string): Promise<void> {
