@@ -12,10 +12,10 @@ import { MenuComponent } from './components/menu/menu.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { 
   AuthGuardService as AuthGuard 
-} from './services/auth.guard';
+} from './services/guards/auth.guard';
 import { 
   LoggedGuardService as LoggedGuard 
-} from './services/logged.guard';
+} from './services/guards/logged.guard';
 
 
 const routes: Routes = [
