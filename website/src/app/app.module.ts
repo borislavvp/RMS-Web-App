@@ -2,7 +2,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 // * Angular Material
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -10,6 +11,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatMenuModule } from '@angular/material/menu';
 
 // * Other Modules
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -34,6 +36,8 @@ import { BasketComponent } from './components/basket/basket.component';
 import { DeliveryDetailsComponent } from './components/basket/delivery-details/delivery-details.component';
 import { PaymentDetailsComponent } from './components/basket/payment-details/payment-details.component';
 import { AboutComponent } from './components/about/about.component';
+import { LoginRedirectComponent } from './components/login/login-redirect/login-redirect.component';
+import { LogoutRedirectComponent } from './components/login/logout-redirect/logout-redirect.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +59,9 @@ import { AboutComponent } from './components/about/about.component';
     BasketComponent,
     DeliveryDetailsComponent,
     PaymentDetailsComponent,
-    AboutComponent
+    AboutComponent,
+    LoginRedirectComponent,
+    LogoutRedirectComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +71,10 @@ import { AboutComponent } from './components/about/about.component';
     MatGridListModule,
     MatIconModule,
     MatDialogModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
