@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Product } from 'src/app/models/product.model';
+import { ItemModalComponent } from '../item-modal/item-modal.component';
 
 @Component({
   selector: 'app-menu-item',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuItemComponent implements OnInit {
 
-  constructor() { }
+  @Input() product: Product;
+
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
+
+  openItemDialog(product: Product){
+    this.dialog.open(ItemModalComponent, { 
+      panelClass: 'custom-dialog',
+      data: {
+        product: product
+      },
+      backdropClass: 'backdropBackground'
+    });
+  }
+
+  addToBasket(product: Product){}
 
 }

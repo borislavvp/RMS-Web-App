@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Product } from 'src/app/models/product.model';
+import { ProductService } from 'src/app/services/product.service';
 import { ItemModalComponent } from './item-modal/item-modal.component';
 
 @Component({
@@ -11,22 +13,10 @@ import { ItemModalComponent } from './item-modal/item-modal.component';
 })
 export class MenuComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
-    this.openDialog();
-  }
-
-  openDialog(){
-    this.dialog.open(ItemModalComponent, { 
-      panelClass: 'custom-dialog',
-      data: {
-        name: 'Lorem item',
-        description: "destcription lorem ipsum",
-        ingredients: "list with ingredients"  
-      },
-      backdropClass: 'backdropBackground'
-    });
+    // this.productService.productsList.subscribe(list => this.products = list)
   }
 
 }

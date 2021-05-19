@@ -1,10 +1,10 @@
 <div class="item" fxLayout="row" fxLayoutAlign="none center" fxLayoutGap="2rem">
-    <img src="../../../../assets/images/icons/add.png" alt="Add" class="icon">
+    <img src="../../../../assets/images/icons/add.png" alt="Add" class="icon" style="cursor: pointer;" (click)="addToBasket(product)">
     <div class="info">
         <div class="row" fxLayout="row" fxLayoutAlign="space-between start">
-            <p class="name">Lorem ipsum dolor</p>
-            <p class="price">$ 7.50</p>
+            <p class="name selectable" (click)="openItemDialog(product)">{{product.name}}</p>
+            <p class="price">$ {{product.price | number : '1.2-2'}}</p>
         </div>
-        <p class="ingredients">Asparagus, hens egg, toasted sunflower seeds, Spenwood cheese</p>
+        <p class="ingredients">{{product.ingredients}}</p>
     </div>
 </div>

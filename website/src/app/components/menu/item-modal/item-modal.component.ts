@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Product } from 'src/app/models/product.model';
 
 @Component({
   selector: 'app-item-modal',
@@ -8,11 +9,19 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class ItemModalComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data) { }
+  product: Product;
+
+  constructor(@Inject(MAT_DIALOG_DATA) public data,
+    private dialogRef: MatDialogRef<ItemModalComponent>) { }
 
   ngOnInit(): void {
+    this.product = this.data.product;
   }
 
-  closeModal(){}
+  closeModal(){
+    this.dialogRef.close();
+  }
+
+  addToBasket(){}
 
 }
