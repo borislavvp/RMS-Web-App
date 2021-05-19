@@ -25,7 +25,7 @@ export class AuthService {
       client_id: "WEBSITE_ID",
       redirect_uri:  window.location.protocol + "//" + window.location.host + "/signin-oidc",
       response_type: "code",
-      scope: "openid profile",
+      scope: "openid profile proepwebsitegateway.fullaccess",
       post_logout_redirect_uri: window.location.protocol + "//" + window.location.host + "/signout-callback-oidc",
       automaticSilentRenew: true,
       silent_redirect_uri: window.location.protocol + "//" + window.location.host + "/assets/silent-callback.html"

@@ -161,6 +161,10 @@ mat-icon.icon{
         color: $primary-dark-hover;
     }
 }
+.selectable:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
 
 
 
