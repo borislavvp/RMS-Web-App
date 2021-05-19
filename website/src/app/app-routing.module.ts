@@ -28,7 +28,7 @@ const routes: Routes = [
   { path: 'signin-oidc', component: LoginRedirectComponent },
   { path: 'signout-callback-oidc', component: LogoutRedirectComponent },
   { path: 'register', component: RegistrationComponent, data: {title: 'Register'}, canActivate: [LoggedGuard] },
-  { path: 'basket', component: BasketComponent, data: {title: 'Shopping Basket'} },
+  { path: 'basket', component: BasketComponent, data: {title: 'Shopping Basket'}, canActivate: [AuthGuard] },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
