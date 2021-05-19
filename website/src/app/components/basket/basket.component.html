@@ -14,7 +14,7 @@
                         <p>{{item.quantity}}</p>
                         <img (click)="increaseItemQuantity(item)" src="../../../assets/images/icons/plus.png" alt="" class="icon">
                     </div>
-                    <p>${{item.price | number : '1.2-2'}}</p>
+                    <p>${{item.price * item.quantity | number : '1.2-2'}}</p>
                     <mat-icon (click)="removeItem(item)">close</mat-icon>
                 </div>
             </div>
