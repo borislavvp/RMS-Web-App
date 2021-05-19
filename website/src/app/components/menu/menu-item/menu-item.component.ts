@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { BasketItem } from 'src/app/models/basket/basketItem.model';
 import { Product } from 'src/app/models/product.model';
+import { BasketService } from 'src/app/services/basket.service';
 import { ItemModalComponent } from '../item-modal/item-modal.component';
 
 @Component({
@@ -12,7 +14,7 @@ export class MenuItemComponent implements OnInit {
 
   @Input() product: Product;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private basketService: BasketService) { }
 
   ngOnInit(): void {
   }
@@ -27,6 +29,13 @@ export class MenuItemComponent implements OnInit {
     });
   }
 
-  addToBasket(product: Product){}
+  addToBasket(product: Product){
+    var item: BasketItem = {
+      productId: product.id,
+      productName: product.name,
+      price: product.price
+    }
+    this.basketService.addItem(item);
+  }
 
 }
