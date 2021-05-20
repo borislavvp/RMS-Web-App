@@ -59,6 +59,10 @@ export class AuthService {
     });
   }
 
+  get UserId() {
+    return this.User.then(user => user.profile.sub)
+  }
+
   SignIn(email: string, password: string): Promise<void> {
     this.fetching = true;
     return new Promise((resolve, reject) => {

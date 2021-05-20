@@ -31,7 +31,7 @@ export class RequestService {
       .put<any>(this.apiBaseUrl + endpoint, JSON.stringify(vm), { headers });
   }
 
-  public delete(endpoint: string, id: number): Observable<any> {
+  public delete(endpoint: string, id?: number): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
     let params = new HttpParams().append('id', id.toString());

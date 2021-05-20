@@ -4,38 +4,28 @@
         [ngStyle]="{'height': onDesktop ? '95vh' : '100vh'}">
         <div class="basket-item-list" fxLayout="column" fxLayoutGap="2rem">
             <h2>Shopping Basket</h2>
-            <!-- To be exported in a separate component -->
-            <div class="basket-item" fxLayout="row" fxLayoutAlign="space-between center">
-                <p>Lorem ipsum dolor</p>
+
+            <!-- List with items -->
+            <div *ngFor="let item of basket?.items" class="basket-item" fxLayout="row" fxLayoutAlign="space-between center">
+                <p>{{item.productName}}</p>
                 <div fxLayout="row" fxLayoutGap="5rem" fxLayoutGap.lt-sm="1.5rem" fxLayoutAlign="none center">
                     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1.5rem" fxLayoutGap.lt-sm=".8rem">
-                        <img src="../../../assets/images/icons/minus.png" alt="" class="icon">
-                        <p>1</p>
-                        <img src="../../../assets/images/icons/plus.png" alt="" class="icon">
+                        <img (click)="decreaseItemQuantity(item)" src="../../../assets/images/icons/minus.png" alt="" class="icon">
+                        <p>{{item.quantity}}</p>
+                        <img (click)="increaseItemQuantity(item)" src="../../../assets/images/icons/plus.png" alt="" class="icon">
                     </div>
-                    <p>$7.50</p>
-                    <mat-icon>close</mat-icon>
+                    <p>${{item.price * item.quantity | number : '1.2-2'}}</p>
+                    <mat-icon (click)="removeItem(item)">close</mat-icon>
                 </div>
             </div>
-            <div class="basket-item" fxLayout="row" fxLayoutAlign="space-between center">
-                <p>Lorem ipsum dolor</p>
-                <div fxLayout="row" fxLayoutGap="5rem" fxLayoutGap.lt-sm="1.5rem" fxLayoutAlign="none center">
-                    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1.5rem" fxLayoutGap.lt-sm=".8rem">
-                        <img src="../../../assets/images/icons/minus.png" alt="" class="icon">
-                        <p>1</p>
-                        <img src="../../../assets/images/icons/plus.png" alt="" class="icon">
-                    </div>
-                    <p>$7.50</p>
-                    <mat-icon>close</mat-icon>
-                </div>
-            </div>
+
         </div>
 
         <div class="total" fxLayout="row" fxLayoutAlign="space-between center">
             <a routerLink="/menu" class="link">Back to menu</a>
             <div fxLayout="row" fxLayoutGap="3rem">
                 <p>Total:</p>
-                <p>$ 37.50</p>
+                <p>$ {{basket?.totalPrice | number : '1.2-2'}}</p>
             </div>
         </div>
 
