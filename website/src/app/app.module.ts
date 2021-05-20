@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // * Angular Material
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -38,6 +38,7 @@ import { PaymentDetailsComponent } from './components/basket/payment-details/pay
 import { AboutComponent } from './components/about/about.component';
 import { LoginRedirectComponent } from './components/login/login-redirect/login-redirect.component';
 import { LogoutRedirectComponent } from './components/login/logout-redirect/logout-redirect.component';
+import { HttpConfigInterceptor } from './services/interceptors/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,9 @@ import { LogoutRedirectComponent } from './components/login/logout-redirect/logo
     HttpClientModule,
     MatMenuModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
