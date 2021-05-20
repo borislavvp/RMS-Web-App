@@ -32,6 +32,12 @@ export class BasketService {
     })
   }
 
+  deleteBasket(){
+    this.authService.UserId.then(userId => {
+      this.requestService.delete("basket/" + userId).subscribe()
+    })
+  }
+
 
   addItem(item: BasketItem){
     this.authService.isAuthenticated
