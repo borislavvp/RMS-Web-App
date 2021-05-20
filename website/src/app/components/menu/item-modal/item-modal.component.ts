@@ -32,6 +32,7 @@ export class ItemModalComponent implements OnInit {
       price: this.product.price
     }
     this.basketService.addItem(item);
+    this.dialogRef.close();
   }
 
 }

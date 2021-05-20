@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { Basket } from '../models/basket/basket.model';
 import { BasketItem } from '../models/basket/basketItem.model';
@@ -12,10 +13,9 @@ export class BasketService {
 
   basket: BehaviorSubject<Basket> = new BehaviorSubject<Basket>(null);
 
-  constructor(private requestService: RequestService,
-    private authService: AuthService) {
-      this.fetchBasket();
-  }
+  constructor(private router: Router,
+    private requestService: RequestService,
+    private authService: AuthService) {}
 
   fetchBasket(){
     this.authService.UserId.then(userId => 
@@ -34,14 +34,20 @@ export class BasketService {
 
 
   addItem(item: BasketItem){
-    var newBasket = this.basket.value;
-    var existingItem = newBasket.items.find(i => i.productId == item.productId);
-    if(existingItem) existingItem.quantity++;
-    else {
-      item.quantity = 1;
-      newBasket.items.push(item);
-    }
-    this.updateBasket(newBasket);
+    this.authService.isAuthenticated
+      .then(logged => {
+        if(logged) { 
+          var newBasket = this.basket.value;
+          var existingItem = newBasket.items.find(i => i.productId == item.productId);
+          if(existingItem) existingItem.quantity++;
+          else {
+            item.quantity = 1;
+            newBasket.items.push(item);
+          }
+          this.updateBasket(newBasket);
+        }
+        else this.router.navigate(["login"]); 
+      })
   }
 
   increaseItemQuantity(item: BasketItem){
