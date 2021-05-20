@@ -1,6 +1,6 @@
 <section fxLayout="row" (window:resize)="onResize($event)">
 
-    <div class="basket top-spacing" fxLayout="column" fxLayoutGap="2rem" fxLayoutGap.lt-sm="1rem" [fxFlex]="onDesktop ? 70 : 100"
+    <div class="basket top-spacing" fxLayout="column" fxLayoutGap="2rem" fxLayoutGap.lt-sm="1rem" [fxFlex]="(onDesktop && basket?.items.length > 0) ? 70 : 100"
         [ngStyle]="{'height': onDesktop ? '95vh' : '100vh'}">
         <div class="basket-item-list" fxLayout="column" fxLayoutGap="2rem">
             <h2>Shopping Basket</h2>
@@ -33,13 +33,13 @@
     </div>
     
     <app-delivery-details class="right-panel top-spacing" [fxFlex]="onDesktop ? 30 : 100" fxLayout="column" fxLayoutGap="2rem"
-        *ngIf="(onDesktop && onDelivery) || (!onDesktop && toShow && onDelivery)" 
+        *ngIf="((onDesktop && onDelivery) || (!onDesktop && toShow && onDelivery)) && basket?.items.length > 0" 
         (onPaymentPanel)="changeToPayment()" (onBack)="onBack()" 
         [onMobile]="!onDesktop">
     </app-delivery-details>
 
     <app-payment-details class="right-panel top-spacing" [fxFlex]="onDesktop ? 30 : 100" fxLayout="column" fxLayoutGap="2rem"
-        *ngIf="(onDesktop && onPayment) || (!onDesktop && toShow && onPayment)" 
+        *ngIf="((onDesktop && onPayment) || (!onDesktop && toShow && onPayment)) && basket?.items.length > 0" 
         [onMobile]="!onDesktop" (onBack)="onBack()">
     </app-payment-details>
 

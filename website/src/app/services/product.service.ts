@@ -160,6 +160,10 @@ export class ProductService {
     this.fetchProducts();
   }
 
+  getProductById(id: string): Product {
+    return this.products.find(prod => prod.id == id);
+  }
+
   fetchProducts(){
     this.requestService.get("products").subscribe(data => this.productsList.next(data))
   }
