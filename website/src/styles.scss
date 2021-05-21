@@ -35,6 +35,8 @@ $website-theme: mat-light-theme((
 
 @import "./assets/fonts/fonts.scss";
 
+// regular style toast
+@import '~ngx-toastr/toastr';
 
 
 @import "variables";
