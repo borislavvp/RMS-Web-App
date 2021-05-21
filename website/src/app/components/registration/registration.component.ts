@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { RegisterDTO } from 'src/app/models/registerDTO.model';
 import { AuthService } from 'src/app/services/auth.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-registration',
@@ -13,7 +13,7 @@ export class RegistrationComponent implements OnInit {
 
   registrationForm: FormGroup;
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.buildForm();
@@ -45,12 +45,12 @@ export class RegistrationComponent implements OnInit {
         }
 
         this.authService.Register(registerDTO)
-        // .then(() => this.router.navigate(['account']).catch(() => console.log("Something went wrong!")))
         .catch(() => {
-          console.log("Something went wrong! Please, try again!");
+          this.toastr.error("There was an error with registration! Please, try again!");
         })
       }
-      else console.log("Passwords do not match!")
+      else this.toastr.error("Passwords do not match!")
     }
+    else this.toastr.error("Fields are invalid");
   }
 }
