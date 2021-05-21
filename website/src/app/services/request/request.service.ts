@@ -34,7 +34,7 @@ export class RequestService {
   public delete(endpoint: string, id?: number): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
-    let params = new HttpParams().append('id', id.toString());
+    let params = new HttpParams().append('id', id?.toString());
 
 
     return this.httpClient

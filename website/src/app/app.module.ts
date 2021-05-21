@@ -4,9 +4,10 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpConfigInterceptor } from './services/interceptors/token.interceptor';
 
 // * Angular Material
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -15,6 +16,7 @@ import { MatMenuModule } from '@angular/material/menu';
 
 // * Other Modules
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ToastrModule } from 'ngx-toastr';
 
 // * Components
 import { AppComponent } from './app.component';
@@ -38,7 +40,6 @@ import { PaymentDetailsComponent } from './components/basket/payment-details/pay
 import { AboutComponent } from './components/about/about.component';
 import { LoginRedirectComponent } from './components/login/login-redirect/login-redirect.component';
 import { LogoutRedirectComponent } from './components/login/logout-redirect/logout-redirect.component';
-import { HttpConfigInterceptor } from './services/interceptors/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,13 @@ import { HttpConfigInterceptor } from './services/interceptors/token.interceptor
     MatProgressBarModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatMenuModule
+    MatMenuModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 2000,
+      positionClass: 'toast-top-center',
+      preventDuplicates: true,
+    }),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true },

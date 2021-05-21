@@ -39,6 +39,13 @@ export class BasketService {
   }
 
 
+  get BasketItems() {
+    return this.basket.value.items;
+  }
+  get BasketPrice() {
+    return this.basket.value.totalPrice;
+  }
+
   addItem(item: BasketItem){
     this.authService.isAuthenticated
       .then(logged => {

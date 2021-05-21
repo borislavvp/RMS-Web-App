@@ -1,4 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { DeliveryDetails } from 'src/app/models/order/deliveryDetails.model';
+import { OrderService } from 'src/app/services/order.service';
 
 @Component({
   selector: 'app-delivery-details',
@@ -11,13 +14,24 @@ export class DeliveryDetailsComponent implements OnInit {
   @Output() onPaymentPanel = new EventEmitter<boolean>();
   @Output() onBack = new EventEmitter<boolean>();
 
-  constructor() { }
+  deliveryDetailsForm: FormGroup;
+
+  constructor(private orderService: OrderService) { }
 
   ngOnInit(): void {
+    this.deliveryDetailsForm = new FormGroup({
+      'firstName': new FormControl(null, Validators.required),
+      'lastName': new FormControl(null, Validators.required),
+      'phone': new FormControl(null, Validators.required),
+      'address': new FormControl(null, Validators.required),
+    });
   }
 
   changePanel(){
-    this.onPaymentPanel.emit(true);
+    if(this.deliveryDetailsForm.valid){
+      this.orderService.saveDeliveryDetails(this.deliveryDetailsForm.value as DeliveryDetails);
+      this.onPaymentPanel.emit(true);
+    }
   }
   
   goBack(){
