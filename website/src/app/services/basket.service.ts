@@ -5,6 +5,7 @@ import { Basket } from '../models/basket/basket.model';
 import { BasketItem } from '../models/basket/basketItem.model';
 import { AuthService } from './auth.service';
 import { RequestService } from './request/request.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,8 @@ export class BasketService {
 
   constructor(private router: Router,
     private requestService: RequestService,
-    private authService: AuthService) {}
+    private authService: AuthService,
+    private toastr: ToastrService) {}
 
   fetchBasket(){
     this.authService.UserId.then(userId => 
@@ -57,6 +59,7 @@ export class BasketService {
             item.quantity = 1;
             newBasket.items.push(item);
           }
+          this.toastr.success("Item added to basket");
           this.updateBasket(newBasket);
         }
         else this.router.navigate(["login"]); 

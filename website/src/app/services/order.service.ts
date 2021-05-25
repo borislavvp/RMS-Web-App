@@ -8,6 +8,7 @@ import { AuthService } from './auth.service';
 import { BasketService } from './basket.service';
 import { ProductService } from './product.service';
 import { RequestService } from './request/request.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
@@ -20,10 +21,10 @@ export class OrderService {
     private basketService: BasketService,
     private productService: ProductService,
     private authService: AuthService,
-    private router: Router) { }
+    private router: Router,
+    private toastr: ToastrService) { }
 
   placeOrder(paymentDetails: PaymentDetails){
-    // var userId: string;
     var products: OrderProduct[] = [];
 
     this.basketService.BasketItems.forEach(item => {
@@ -50,14 +51,13 @@ export class OrderService {
         address: this.deliveryDetails.address,
         paymentDetails: paymentDetails
       }
-      // console.log(order);
       this.requestService.post("orders", order).subscribe(
         () => {
-          console.log("Order has been placed successfully!");
+          this.toastr.success("Order has been placed successfully!");
           this.basketService.deleteBasket();
           this.router.navigate(["account"]); 
         },
-        (error: any) => console.log(error.error)
+        error => this.toastr.error(error.error.error)
       )
     });
   }

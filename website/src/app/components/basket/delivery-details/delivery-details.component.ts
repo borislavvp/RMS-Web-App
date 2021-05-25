@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DeliveryDetails } from 'src/app/models/order/deliveryDetails.model';
 import { OrderService } from 'src/app/services/order.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-delivery-details',
@@ -16,7 +17,8 @@ export class DeliveryDetailsComponent implements OnInit {
 
   deliveryDetailsForm: FormGroup;
 
-  constructor(private orderService: OrderService) { }
+  constructor(private orderService: OrderService,
+    private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.deliveryDetailsForm = new FormGroup({
@@ -32,6 +34,7 @@ export class DeliveryDetailsComponent implements OnInit {
       this.orderService.saveDeliveryDetails(this.deliveryDetailsForm.value as DeliveryDetails);
       this.onPaymentPanel.emit(true);
     }
+    else this.toastr.error("Fields are invalid!");
   }
   
   goBack(){

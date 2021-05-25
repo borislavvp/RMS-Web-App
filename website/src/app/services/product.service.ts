@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -12,7 +12,8 @@ export class ProductService {
 
   productsList: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>([]);
 
-  constructor(private requestService: RequestService, private httpClient: HttpClient) {
+  constructor(private requestService: RequestService, 
+    private httpClient: HttpClient) {
     this.fetchProducts();
   }
 
@@ -21,7 +22,9 @@ export class ProductService {
   }
 
   fetchProducts(){
-    this.requestService.get("products").pipe(map(list => list.filter(item => item.availability == true))).subscribe(data => this.productsList.next(data))
+    this.requestService.get("products")
+    .pipe(map(list => list.filter(item => item.availability == true)))
+    .subscribe(data => this.productsList.next(data))
   }
 
   fetchImageUrl(imageName: string): Observable<any> {
