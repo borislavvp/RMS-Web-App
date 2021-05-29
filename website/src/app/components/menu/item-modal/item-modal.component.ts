@@ -22,7 +22,10 @@ export class ItemModalComponent implements OnInit {
 
   ngOnInit(): void {
     this.product = this.data.product;
-    this.productService.fetchImageUrl(this.product.image).subscribe(url => this.productImage = url);
+    this.productService.fetchImageUrl(this.product.image).subscribe(url => {
+      this.productImage = url
+      console.log(url)
+    });
   }
 
   closeModal(){

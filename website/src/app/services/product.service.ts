@@ -29,7 +29,7 @@ export class ProductService {
 
   fetchImageUrl(imageName: string): Observable<any> {
     return this.httpClient.get(
-      "https://localhost:5050/products/image/" + imageName, 
+      "https://localhost:5051/products/image/" + imageName, 
       { responseType: 'text' }
     );
   }
