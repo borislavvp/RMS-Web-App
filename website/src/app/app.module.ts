@@ -13,6 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatBadgeModule } from '@angular/material/badge';
 
 // * Other Modules
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -83,6 +84,7 @@ import { LogoutRedirectComponent } from './components/login/logout-redirect/logo
       positionClass: 'toast-top-center',
       preventDuplicates: true,
     }),
+    MatBadgeModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true },
