@@ -2,24 +2,18 @@
     <h2>Trancking Info</h2>
 
     <div class="tracker" fxLayout="column" fxLayoutAlign="center center">
-
-        <div class="progress-bar" [ngClass]="order.status">
-
+        <div class="progress-bar" [ngClass]="lastOrder?.status">
             <div class="progress-bar-states" fxLayout="row" fxLayoutAlign="space-between none">
                 <div class="state" *ngFor="let state of trackerStates" [ngClass]="state"></div>
             </div>
-
             <div class="progress-bar-icons" fxLayout="row" fxLayoutAlign="space-between none">
                 <div class="icon" *ngFor="let icon of statusIcons" 
                     [ngStyle]="{'background-image': 'url(../../../assets/images/icons/tracking/' + icon + ');'}"></div>
             </div>
-
             <div class="progress-bar-state-names" fxLayout="row" fxLayoutAlign="space-between none">
                 <p *ngFor="let state of trackerStates; let i = index" [ngClass]="state">{{orderNameStatus[i]}}</p>
             </div>
-
         </div>
-
     </div>
 
 </section>
