@@ -13,7 +13,7 @@ import { environment } from 'src/environments/environment';
 })
 export class AccountComponent implements OnInit {
 
-  lastOrder: Order = { id: 1, status: "New", date: new Date(), amount: 0 }
+  lastOrder: Order;
 
   trackerStates: string[];
   statusIcons: string[];

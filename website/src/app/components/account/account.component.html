@@ -1,4 +1,4 @@
-<section class="top-spacing" fxLayout="column" fxLayoutAlign="none center">
+<section class="top-spacing" fxLayout="column" fxLayoutAlign="none center" *ngIf="lastOrder">
     <h2>Trancking Info</h2>
 
     <div class="tracker" fxLayout="column" fxLayoutAlign="center center">
@@ -15,5 +15,12 @@
             </div>
         </div>
     </div>
+    
+</section>
 
+<section class="top-spacing" fxLayout="column" fxLayoutAlign="none center" *ngIf="!lastOrder">
+    <div class="tracker" fxLayout="column" fxLayoutAlign="center center">
+        <h2>No expected orders</h2>
+    </div>
+    
 </section>
