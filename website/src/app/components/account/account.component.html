@@ -2,35 +2,18 @@
     <h2>Trancking Info</h2>
 
     <div class="tracker" fxLayout="column" fxLayoutAlign="center center">
-
-        <div class="progress-bar">
-
+        <div class="progress-bar" [ngClass]="lastOrder?.status">
             <div class="progress-bar-states" fxLayout="row" fxLayoutAlign="space-between none">
-                <div class="state previous-state"></div>
-                <div class="state previous-state"></div>
-                <div class="state current-state"></div>
-                <div class="state next-state"></div>
-                <div class="state next-state"></div>
+                <div class="state" *ngFor="let state of trackerStates" [ngClass]="state"></div>
             </div>
-
             <div class="progress-bar-icons" fxLayout="row" fxLayoutAlign="space-between none">
-                <div class="icon" style="background-image: url(../../../assets/images/icons/tracking/accepted_past.png);"></div>
-                <div class="icon" style="background-image: url(../../../assets/images/icons/tracking/cooking_past.png);"></div>
-                <div class="icon" style="background-image: url(../../../assets/images/icons/tracking/packaging_current.png);"></div>
-                <div class="icon" style="background-image: url(../../../assets/images/icons/tracking/delivering_future.png);"></div>
-                <div class="icon" style="background-image: url(../../../assets/images/icons/tracking/delivered_future.png);"></div>
+                <div class="icon" *ngFor="let icon of statusIcons" 
+                    [ngStyle]="{'background-image': 'url(../../../assets/images/icons/tracking/' + icon + ');'}"></div>
             </div>
-
             <div class="progress-bar-state-names" fxLayout="row" fxLayoutAlign="space-between none">
-                <p class="previous-state">Accepted</p>
-                <p class="previous-state">Cooking</p>
-                <p class="current-state">Packaging</p>
-                <p class="next-state">Delivering</p>
-                <p class="next-state">Delivered</p>
+                <p *ngFor="let state of trackerStates; let i = index" [ngClass]="state">{{orderNameStatus[i]}}</p>
             </div>
-
         </div>
-
     </div>
 
 </section>

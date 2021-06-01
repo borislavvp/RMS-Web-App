@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --ssl --ssl-key D:\\Programing\\certificates\\localhost.key --ssl-cert D:\\Programing\\certificates\\localhost.crt --port 4201",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  IDENTITY_AUTHORITY: "https://localhost:5001"
+  IDENTITY_AUTHORITY: "https://localhost:5001",
+  ORDER_MESSAGE_SERVICE: "ws://localhost:3333"
 };
 
 /*
