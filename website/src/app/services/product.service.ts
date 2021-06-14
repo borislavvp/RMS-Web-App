@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { Product } from '../models/products/product.model';
 import { RequestService } from './request/request.service';
 
@@ -29,7 +30,7 @@ export class ProductService {
 
   fetchImageUrl(imageName: string): Observable<any> {
     return this.httpClient.get(
-      "https://localhost:5051/products/image/" + imageName, 
+      environment.WEBSITE_GATEWAY + "/products/image/" + imageName, 
       { responseType: 'text' }
     );
   }

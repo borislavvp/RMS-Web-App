@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { QueryParameter } from './queryParameter';
 
 @Injectable({
@@ -8,7 +9,8 @@ import { QueryParameter } from './queryParameter';
 })
 export class RequestService {
   
-  private apiBaseUrl = "https://localhost:5051/";
+  // private apiBaseUrl = "https://localhost:5051/";
+  private apiBaseUrl = environment.WEBSITE_GATEWAY;
 
   constructor(
     protected httpClient: HttpClient) { }
