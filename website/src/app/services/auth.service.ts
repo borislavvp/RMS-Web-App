@@ -23,12 +23,12 @@ export class AuthService {
     this._userManager = new UserManager({
       authority: environment.IDENTITY_AUTHORITY,
       client_id: "WEBSITE_ID",
-      redirect_uri:  window.location.protocol + "//" + window.location.host + "/signin-oidc",
+      redirect_uri:  window.location.protocol + "//" + window.location.host + "/website/signin-oidc",
       response_type: "code",
       scope: "openid profile proepwebsitegateway.fullaccess",
-      post_logout_redirect_uri: window.location.protocol + "//" + window.location.host + "/signout-callback-oidc",
+      post_logout_redirect_uri: window.location.protocol + "//" + window.location.host + "/website/signout-callback-oidc",
       automaticSilentRenew: true,
-      silent_redirect_uri: window.location.protocol + "//" + window.location.host + "/assets/silent-callback.html"
+      silent_redirect_uri: window.location.protocol + "//" + window.location.host + "/website/assets/silent-callback.html"
     })
     this._userManager.events.addAccessTokenExpired(() => this.router.navigate(["login"]))
   }

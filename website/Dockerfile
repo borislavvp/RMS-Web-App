@@ -7,7 +7,6 @@ COPY ["tsconfig.json", "./"]
 RUN npm install
 
 COPY [".", "./"]
-RUN ls -al
 RUN npm run build
 
 FROM nginx:stable-alpine 

@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false,
-  IDENTITY_AUTHORITY: "https://localhost:5001",
-  WEBSITE_GATEWAY: "http://localhost:5051/",
-  ORDER_MESSAGE_SERVICE: "ws://localhost:3333"
+  IDENTITY_AUTHORITY: "https://51.141.4.73/api/v1/identity",
+  WEBSITE_GATEWAY: "https://51.141.4.73/api/v1/website-gateway/",
+  ORDER_MESSAGE_SERVICE: "wss://51.141.4.73/api/v1/orders-status-socket",
 };
 
 /*
