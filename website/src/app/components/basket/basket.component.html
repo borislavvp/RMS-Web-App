@@ -10,9 +10,9 @@
                 <p>{{item.productName}}</p>
                 <div fxLayout="row" fxLayoutGap="5rem" fxLayoutGap.lt-sm="1.5rem" fxLayoutAlign="none center">
                     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1.5rem" fxLayoutGap.lt-sm=".8rem">
-                        <img (click)="decreaseItemQuantity(item)" src="../../../assets/images/icons/minus.png" alt="" class="icon">
+                        <img (click)="decreaseItemQuantity(item)" src="../../../website/assets/images/icons/minus.png" alt="" class="icon">
                         <p>{{item.quantity}}</p>
-                        <img (click)="increaseItemQuantity(item)" src="../../../assets/images/icons/plus.png" alt="" class="icon">
+                        <img (click)="increaseItemQuantity(item)" src="../../../website/assets/images/icons/plus.png" alt="" class="icon">
                     </div>
                     <p>${{item.price * item.quantity | number : '1.2-2'}}</p>
                     <mat-icon (click)="removeItem(item)">close</mat-icon>

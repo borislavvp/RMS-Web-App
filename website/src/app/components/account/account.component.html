@@ -8,7 +8,7 @@
             </div>
             <div class="progress-bar-icons" fxLayout="row" fxLayoutAlign="space-between none">
                 <div class="icon" *ngFor="let icon of statusIcons" 
-                    [ngStyle]="{'background-image': 'url(../../../assets/images/icons/tracking/' + icon + ');'}"></div>
+                    [ngStyle]="{'background-image': 'url(../../../website/assets/images/icons/tracking/' + icon + ');'}"></div>
             </div>
             <div class="progress-bar-state-names" fxLayout="row" fxLayoutAlign="space-between none">
                 <p *ngFor="let state of trackerStates; let i = index" [ngClass]="state">{{orderNameStatus[i]}}</p>

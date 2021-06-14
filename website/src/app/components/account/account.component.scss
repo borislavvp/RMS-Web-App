@@ -35,14 +35,14 @@
             .previous-state{
                 background-color: $tracking-previous;
                 &::after{
-                    background: url("../../../assets/images/icons/checkmark.png") no-repeat center;
+                    background: url("../../../website/assets/images/icons/checkmark.png") no-repeat center;
                     background-size: cover;
                 }
             }
             .current-state{
                 background-color: $tracking-current;
                 &::after{
-                    background: url("../../../assets/images/icons/refresh.png") no-repeat center;
+                    background: url("../../../website/assets/images/icons/refresh.png") no-repeat center;
                     background-size: cover;
                     animation: spin 2s linear infinite;
                 }
@@ -50,7 +50,7 @@
             .done{
                 background-color: $tracking-current;
                 &::after{
-                    background: url("../../../assets/images/icons/checkmark.png") no-repeat center;
+                    background: url("../../../website/assets/images/icons/checkmark.png") no-repeat center;
                     background-size: cover;
                 }
             }

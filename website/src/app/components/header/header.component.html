@@ -5,7 +5,7 @@
             'height': onMobile && navOpen ? '100vh' : 'auto'}">
     <div class="helper" *ngIf="!navOpen && toBeColored"></div>
     <div class="top" fxLayout="row" fxLayoutAlign="space-between center">
-        <img routerLink="/" src="../../../assets/images/logo_light.svg" alt="" class="logo">
+        <img routerLink="/" src="../../../website/assets/images/logo_light.svg" alt="" class="logo">
     
         <mat-icon class="icon" *ngIf="onMobile && !navOpen" (click)="toggleNav()">menu</mat-icon>
         <mat-icon class="icon" *ngIf="onMobile && navOpen" (click)="toggleNav()">close</mat-icon>
@@ -20,10 +20,10 @@
         <ul fxLayout="row" [fxLayoutGap]="onMobile ? '3rem' : '0rem'">
             <!-- <li><a routerLink="/basket"><img src="../../../assets/images/icons/shopping_bag.png" alt="" class="icon"></a></li> -->
             <li><a routerLink="/basket" [matBadgeHidden]="!numberOfItemsInBasket || numberOfItemsInBasket == 0" [matBadge]="numberOfItemsInBasket">
-                <img src="../../../assets/images/icons/shopping_bag.png" alt="" class="icon">
+                <img src="../../../website/assets/images/icons/shopping_bag.png" alt="" class="icon">
             </a></li>
-            <li *ngIf="!inAccount"><a routerLink="/account"><img src="../../../assets/images/icons/user.png" alt="" class="icon"></a></li>
-            <li *ngIf="inAccount" (click)="logout()"><a routerLink="/account"><img src="../../../assets/images/icons/exit_icon.png" alt="" class="icon"></a></li>
+            <li *ngIf="!inAccount"><a routerLink="/account"><img src="../../../website/assets/images/icons/user.png" alt="" class="icon"></a></li>
+            <li *ngIf="inAccount" (click)="logout()"><a routerLink="/account"><img src="../../../website/assets/images/icons/exit_icon.png" alt="" class="icon"></a></li>
         </ul>
     </nav>
     

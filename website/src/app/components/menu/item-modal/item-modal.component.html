@@ -1,7 +1,7 @@
 <div class="card" fxLayout="row" fxLayout.lt-lg="column">
     <mat-icon class="icon" (click)="closeModal()">close</mat-icon>
     <img *ngIf="product?.image" [src]="product.image" alt="">
-    <img *ngIf="!product?.image" src="../../../../assets/images/no-image.png" alt="">
+    <img *ngIf="!product?.image" src="../../../../website/assets/images/no-image.png" alt="">
     <div class="info" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="1rem">
         <h4>{{product.name}}</h4>
         <h5>Description</h5>
