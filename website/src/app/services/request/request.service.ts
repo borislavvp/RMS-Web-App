@@ -9,7 +9,7 @@ import { QueryParameter } from './queryParameter';
 })
 export class RequestService {
   
-  // private apiBaseUrl = "https://localhost:5051/";
+  // private apiBaseUrl = "http://localhost:5051/";
   private apiBaseUrl = environment.WEBSITE_GATEWAY;
 
   constructor(

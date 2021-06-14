@@ -25,13 +25,14 @@ export class ProductService {
   fetchProducts(){
     this.requestService.get("products")
     .pipe(map(list => list.filter(item => item.availability == true)))
-    .subscribe(data => this.productsList.next(data))
+    .subscribe(data => {console.log(data); this.productsList.next(data)})
   }
 
-  fetchImageUrl(imageName: string): Observable<any> {
-    return this.httpClient.get(
-      environment.WEBSITE_GATEWAY + "/products/image/" + imageName, 
-      { responseType: 'text' }
-    );
-  }
+  // fetchImageUrl(imageUrl: string): Observable<any> {
+  //   return this.httpClient.get(
+  //     // environment.WEBSITE_GATEWAY + "/products/image/" + imageName, 
+  //     imageUrl,
+  //     { responseType: 'text' }
+  //   );
+  // }
 }
