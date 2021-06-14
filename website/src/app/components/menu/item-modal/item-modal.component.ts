@@ -13,7 +13,6 @@ import { ProductService } from 'src/app/services/product.service';
 export class ItemModalComponent implements OnInit {
 
   product: Product;
-  productImage;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data,
     private dialogRef: MatDialogRef<ItemModalComponent>,
@@ -22,10 +21,6 @@ export class ItemModalComponent implements OnInit {
 
   ngOnInit(): void {
     this.product = this.data.product;
-    this.productService.fetchImageUrl(this.product.image).subscribe(url => {
-      this.productImage = url
-      console.log(url)
-    });
   }
 
   closeModal(){
